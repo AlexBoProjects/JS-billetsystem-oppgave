@@ -39,3 +39,14 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
   if (typeof er_medlem !== "boolean") {
     return "Medlem må være true eller false.";
   }
+    
+  let rabatt = 0;
+  if (er_medlem) {
+    rabatt += 0.2;
+  }
+  if (antall > 5) {
+    rabatt += 0.1;
+  }
+  // kopierte bare fra nv. 2
+  return antall * standardpris * (1 - rabatt);
+}
