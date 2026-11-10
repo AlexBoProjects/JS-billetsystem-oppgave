@@ -39,7 +39,16 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
   if (typeof er_medlem !== "boolean") {
     return "Medlem må være true eller false.";
   }
-    
+  
+    function alder_billettpris(alder) {
+  if (alder < 18) {
+    return 125;
+  }
+  if (alder <= 67) {
+    return 250;
+  }
+  return 175;
+
   let rabatt = 0;
   if (er_medlem) {
     rabatt += 0.2;
