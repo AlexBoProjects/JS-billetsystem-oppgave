@@ -7,7 +7,6 @@
 const antall = 3;
 document.getElementById("resultat").textContent =
   `${antallBilletter} billetter koster ${beregn_pris(antallBilletter)} kr.`;
-*/
 
 // nivå 2
 function beregn_rabattpris(antall, er_medlem) {
@@ -24,3 +23,19 @@ function beregn_rabattpris(antall, er_medlem) {
   return antall * standardpris * (1 - rabatt);
 }
 document.getElementById("resultat").textContent = '${beregn_rebattpris}'
+*/
+// nivaa 3
+alder = 40;
+antall = 2;
+er_medlem = true;
+
+function beregn_avansert_billett(alder, antall, er_medlem) {
+  if (typeof alder !== "number" || alder < 0 || alder > 120) {
+    return "Aldren må være et tall mellom 0 og 120 år.";
+  }
+  if (!Number.isInteger(antall) || antall <= 0) {
+    return "Antall billetter kan ikkje ver negativt tall.";
+  }
+  if (typeof er_medlem !== "boolean") {
+    return "Medlem må være true eller false.";
+  }
