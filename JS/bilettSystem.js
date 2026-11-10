@@ -58,4 +58,5 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
   }
   // kopierte bare fra nv. 2
   return antall * standardpris * (1 - rabatt);
-}
+    }
+        }
