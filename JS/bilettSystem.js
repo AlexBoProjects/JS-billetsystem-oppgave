@@ -23,3 +23,4 @@ function beregn_rabattpris(antall, er_medlem) {
   // medlem og mengderabatt legges sammen når begge krav er oppfylt.
   return antall * standardpris * (1 - rabatt);
 }
+document.getElementById("resultat").textContent = '${beregn_rebattpris}'
