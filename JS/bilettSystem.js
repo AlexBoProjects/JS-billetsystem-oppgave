@@ -51,22 +51,20 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
 
         }
   const grunnpris = finn_billettpris(alder) * antall;
-  let rabatt = er_medlem ? 0.2 : 0;
-
-  if (antall > 5) {
-    rabatt += 0.1;
-  }
-  
-  let rabatt = 0;
-  if (er_medlem) {
+  let rabatt = 0
+    if (er_medlem) {
     rabatt += 0.2;
   }
   if (antall > 5) {
     rabatt += 0.1;
   }
+
+  if (antall > 5) {
+    rabatt += 0.1;
+  }
   // kopierte bare fra nv. 2
+  
   return antall * standardpris * (1 - rabatt);
     }
 
   return grunnpris * (1 - rabatt);
-}
