@@ -61,7 +61,6 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
 }
 
 const resultat = beregn_avansert_billett(alder, antall, er_medlem);
-const resultatElement = document.getElementById("resultat");
 
 const skjema = document.getElementById("billettskjema");
 const resultatElement = document.getElementById("resultat");
