@@ -63,3 +63,7 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
 const resultat = beregn_avansert_billett(alder, antall, er_medlem);
 const resultatElement = document.getElementById("resultat");
 
+if (resultatElement) {
+  resultatElement.textContent =
+    typeof resultat === "number" ? `Totalpris: ${resultat} kr` : resultat;
+}
