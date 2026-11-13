@@ -25,10 +25,6 @@ function beregn_rabattpris(antall, er_medlem) {
 document.getElementById("resultat").textContent = '${beregn_rebattpris}'
 */
 // nivaa 3
-const alder = 40;
-const antall = 2;
-const er_medlem = true;
-
 function beregn_avansert_billett(alder, antall, er_medlem) {
   if (typeof alder !== "number" || !Number.isFinite(alder) || alder < 0 || alder > 120) {
     return "Alderen må være et tall mellom 0 og 120 år.";
@@ -79,4 +75,4 @@ skjema.addEventListener("submit", (event) => {
 // god hjelp av alexander som viste meg hans kode og gjedde meg idear
 // og https://www.w3schools.com/js/js_typeof.asp
 // og https://www.w3schools.com/js/js_const.asp
-// minimalt ai brukt uten om autofill
+// brukt uten om autofill
