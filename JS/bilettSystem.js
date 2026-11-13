@@ -40,13 +40,13 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
     return "Medlem må være true eller false.";
   }
 
-  let billettpris;
+  let alderBillettpris;
   if (alder < 18) {
-    billettpris = 125;
+    alderBillettpris = 125;
   } else if (alder <= 67) {
-    billettpris = 250;
+    alderBillettpris = 250;
   } else {
-    billettpris = 175;
+    alderBillettpris = 175;
   }
 
   let rabatt = 0;
@@ -57,7 +57,7 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
     rabatt += 0.1;
   }
 
-  return billettpris * antall * (1 - rabatt);
+  return alderBillettpris * antall * (1 - rabatt);
 }
 
 const resultat = beregn_avansert_billett(alder, antall, er_medlem);
