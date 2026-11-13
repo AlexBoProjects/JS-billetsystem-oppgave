@@ -25,46 +25,41 @@ function beregn_rabattpris(antall, er_medlem) {
 document.getElementById("resultat").textContent = '${beregn_rebattpris}'
 */
 // nivaa 3
-alder = 40;
-antall = 2;
-er_medlem = true;
+const alder = 40;
+const antall = 2;
+const er_medlem = true;
 
 function beregn_avansert_billett(alder, antall, er_medlem) {
-  if (typeof alder !== "number" || alder < 0 || alder > 120) {
-    return "Aldren må være et tall mellom 0 og 120 år.";
+  if (typeof alder !== "number" || !Number.isFinite(alder) || alder < 0 || alder > 120) {
+    return "Alderen må være et tall mellom 0 og 120 år.";
   }
   if (!Number.isInteger(antall) || antall <= 0) {
-    return "Antall billetter kan ikkje ver negativt tall.";
+    return "Antall billetter må være et positivt heltall.";
   }
   if (typeof er_medlem !== "boolean") {
     return "Medlem må være true eller false.";
   }
-  
-    function alder_billettpris(alder) {
-  if (alder < 18) {
-    return 125;
-  }
-  if (alder <= 67) {
-    return 250;
-  }
-  return 175;
 
-        }
-  const grunnpris = finn_billettpris(alder) * antall;
-  let rabatt = 0
-    if (er_medlem) {
+  let billettpris;
+  if (alder < 18) {
+    billettpris = 125;
+  } else if (alder <= 67) {
+    billettpris = 250;
+  } else {
+    billettpris = 175;
+  }
+
+  let rabatt = 0;
+  if (er_medlem) {
     rabatt += 0.2;
   }
   if (antall > 5) {
     rabatt += 0.1;
   }
 
-  if (antall > 5) {
-    rabatt += 0.1;
-  }
-  // kopierte bare fra nv. 2
-  
-  return antall * standardpris * (1 - rabatt);
-    }
+  return billettpris * antall * (1 - rabatt);
+}
 
-  return grunnpris * (1 - rabatt);
+const resultat = beregn_avansert_billett(alder, antall, er_medlem);
+const resultatElement = document.getElementById("resultat");
+
