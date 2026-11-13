@@ -76,3 +76,7 @@ skjema.addEventListener("submit", (event) => {
   resultatElement.textContent =
     typeof resultat === "number" ? `Totalpris: ${resultat} kr` : resultat;
 });
+// god hjelp av alexander som viste meg hans kode og gjedde meg idear
+// og https://www.w3schools.com/js/js_typeof.asp
+// og https://www.w3schools.com/js/js_const.asp
+// minimalt ai brukt uten om autofill
