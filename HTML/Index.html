@@ -7,6 +7,21 @@
 </head>
 <body>
 <h1>Bilettsystem, skole oppgave av Alex</h1> 
-<div id="resultat"></div>
+  <form id="billettskjema">
+    <div>
+      <label for="antall">Antall personer:</label>
+      <input id="antall" name="antall" type="number" min="1" step="1" value="1" required>
+    </div>
+    <div>
+      <label for="alder">Alder:</label>
+      <input id="alder" name="alder" type="number" min="0" max="120" step="1" required>
+    </div>
+    <div>
+      <label for="er-medlem">Medlem:</label>
+      <input id="er-medlem" name="erMedlem" type="checkbox">
+    </div>
+    <button type="submit">Beregn pris</button>
+  </form>
+  <p id="resultat"></p>
 </body>
 </html>

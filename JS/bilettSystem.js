@@ -63,7 +63,17 @@ function beregn_avansert_billett(alder, antall, er_medlem) {
 const resultat = beregn_avansert_billett(alder, antall, er_medlem);
 const resultatElement = document.getElementById("resultat");
 
-if (resultatElement) {
+const skjema = document.getElementById("billettskjema");
+const resultatElement = document.getElementById("resultat");
+
+skjema.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const alder = Number(document.getElementById("alder").value);
+  const antall = Number(document.getElementById("antall").value);
+  const er_medlem = document.getElementById("er-medlem").checked;
+  const resultat = beregn_avansert_billett(alder, antall, er_medlem);
+
   resultatElement.textContent =
     typeof resultat === "number" ? `Totalpris: ${resultat} kr` : resultat;
-}
+});
